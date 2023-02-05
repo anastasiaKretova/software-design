@@ -11,9 +11,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-/**
- * @author akirakozov
- */
 public class Main {
     public static void main(String[] args) throws Exception {
         try (Connection c = DriverManager.getConnection("jdbc:sqlite:test.db")) {
