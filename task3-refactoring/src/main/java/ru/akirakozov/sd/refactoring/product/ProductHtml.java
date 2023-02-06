@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class ProductHtml {
-    public static void printProductsHTML(List<Product> products, PrintWriter printer) {
+    public static void printProducts(List<Product> products, PrintWriter printer) {
         printer.println("<html><body>");
         for (Product product : products) {
             printer.println(product.toHTML());
@@ -13,16 +13,16 @@ public class ProductHtml {
         printer.println("</body></html>");
     }
 
-    public static void printProductHTML(Optional<Product> product, String header, PrintWriter printer) {
+    public static void printProductWithHeader(Optional<Product> product, String header, PrintWriter printer) {
         printer.println("<html><body>");
         printer.println("<h1>" + header + "</h1>");
         product.ifPresent(p -> printer.println(p.toHTML()));
         printer.println("</body></html>");
     }
 
-    public static void printInfoHTML(Object info, String header, PrintWriter printer) {
+    public static void printInfo(Object info, String data, PrintWriter printer) {
         printer.println("<html><body>");
-        printer.println(header);
+        printer.println(data);
         printer.println(info);
         printer.println("</body></html>");
     }
