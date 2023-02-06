@@ -15,15 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Arrays;
 import java.util.Optional;
 
 import static org.mockito.Mockito.when;
-import static ru.akirakozov.sd.refactoring.product.DataBase.getConnection;
 
 public class QueryTest extends AbstractTest {
     @Mock
