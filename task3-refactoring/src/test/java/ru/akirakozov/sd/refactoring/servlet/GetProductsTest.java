@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 
@@ -51,7 +51,7 @@ public class GetProductsTest extends AbstractTest {
     @Test
     public void getProductServletTest() throws SQLException {
         Product product = new Product("iphone6", 300);
-        when(productDao.getProducts()) .thenReturn(Arrays.asList(product));
+        when(productDao.getProducts()).thenReturn(Collections.singletonList(product));
         servlet.doGet(servletRequest, servletResponse);
         Assert.assertEquals("<html><body>\n" + product.toHTML() + "\n</body></html>\n", stringWriter.toString());
     }

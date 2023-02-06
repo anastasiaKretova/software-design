@@ -57,7 +57,7 @@ public class AddProductTest extends AbstractTest {
         printer.flush();
 
         Assert.assertEquals("OK\n", stringWriter.toString());
-        Assert.assertEquals(product.getValue(),new Product("iphone6", 300));
+        Assert.assertEquals(product.getValue(), new Product("iphone6", 300));
     }
 }
 

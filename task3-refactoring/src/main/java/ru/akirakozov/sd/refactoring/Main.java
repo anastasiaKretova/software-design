@@ -8,10 +8,6 @@ import ru.akirakozov.sd.refactoring.servlet.AddProductServlet;
 import ru.akirakozov.sd.refactoring.servlet.GetProductsServlet;
 import ru.akirakozov.sd.refactoring.servlet.QueryServlet;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-
 import static ru.akirakozov.sd.refactoring.product.DataBase.createTable;
 
 public class Main {
@@ -26,8 +22,8 @@ public class Main {
 
         ProductDao productDao = new ProductDao();
         context.addServlet(new ServletHolder(new AddProductServlet(productDao)), "/add-product");
-        context.addServlet(new ServletHolder(new GetProductsServlet(productDao)),"/get-products");
-        context.addServlet(new ServletHolder(new QueryServlet(productDao)),"/query");
+        context.addServlet(new ServletHolder(new GetProductsServlet(productDao)), "/get-products");
+        context.addServlet(new ServletHolder(new QueryServlet(productDao)), "/query");
 
         server.start();
         server.join();

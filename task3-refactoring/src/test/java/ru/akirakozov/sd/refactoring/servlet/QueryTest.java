@@ -57,7 +57,8 @@ public class QueryTest extends AbstractTest {
         when(productDao.getMaxPriceProduct()).thenReturn(Optional.of(product));
 
         servlet.doGet(servletRequest, servletResponse);
-        Assert.assertEquals("<html><body>\n<h1>Product with max price: </h1>\n" + product.toHTML() + "\n</body></html>\n", stringWriter.toString());
+        Assert.assertEquals("<html><body>\n<h1>Product with max price: </h1>\n" + product.toHTML() +
+                "\n</body></html>\n", stringWriter.toString());
     }
 
     @Test
@@ -68,7 +69,8 @@ public class QueryTest extends AbstractTest {
         when(productDao.getMinPriceProduct()).thenReturn(Optional.of(product));
 
         servlet.doGet(servletRequest, servletResponse);
-        Assert.assertEquals("<html><body>\n<h1>Product with min price: </h1>\n" + product.toHTML() + "\n</body></html>\n", stringWriter.toString());
+        Assert.assertEquals("<html><body>\n<h1>Product with min price: </h1>\n" + product.toHTML() +
+                "\n</body></html>\n", stringWriter.toString());
     }
 
     @Test
